@@ -1,0 +1,13 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(Threads)
+
+include("${CMAKE_CURRENT_LIST_DIR}/EfficiencyLedgerTargets.cmake")
+
+# Provide the canonical imported target name used in the public API.
+if(TARGET EfficiencyLedger::efficiency_ledger AND NOT TARGET EfficiencyLedger::EfficiencyLedger)
+  add_library(EfficiencyLedger::EfficiencyLedger ALIAS EfficiencyLedger::efficiency_ledger)
+endif()
+
+check_required_components(EfficiencyLedger)

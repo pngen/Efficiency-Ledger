@@ -1,0 +1,21 @@
+# Build directories
+build*/
+cmake-build-*/
+
+# Persistence / ledger test artifacts
+*.led
+*.led.tmp
+dist_state*
+example_ledger*
+
+# IDE / OS
+.vscode/
+.idea/
+*.user
+*.suo
+*.VC.db
+.DS_Store
+Thumbs.db
+
+# Stack traces / crash dumps
+*.dmp
